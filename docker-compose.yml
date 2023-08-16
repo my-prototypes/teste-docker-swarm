@@ -1,0 +1,16 @@
+version: '3'
+services:
+    node:
+        build:
+            dockerfile: Dockerfile
+            context: .
+        image: armandoss/flask-app
+        container_name: flask-app
+        ports:
+            - "5000:5000"
+        networks: 
+            - my-app-network
+
+networks: 
+    my-app-network:
+        driver: bridge
